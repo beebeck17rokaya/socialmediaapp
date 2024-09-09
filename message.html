@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .chat-message {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .chat-message.sent {
+            flex-direction: row-reverse;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navbar -->
+  <nav class="bg-blue-700 text-white p-4 shadow-lg">
+      <div class="container mx-auto flex justify-between items-center">
+          <!-- Logo -->
+          <div class="text-2xl font-bold flex items-center">
+              <svg class="w-8 h-8 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M22 0h-20c-1.104 0-2 .896-2 2v20c0 1.104.896 2 2 2h10v-9h-3v-3h3v-2.204c0-2.946 1.794-4.796 4.636-4.796 1.316 0 2.707.236 2.707.236v3h-1.525c-1.501 0-1.931.929-1.931 1.88v1.884h3.5l-.464 3h-3.036v9h5.964c1.104 0 2-.896 2-2v-20c0-1.104-.896-2-2-2z"/></svg>
+              BOOK
+          </div>
+          <!-- Search Bar -->
+          <div class="hidden md:block w-1/2 lg:w-1/3">
+              <input type="text" placeholder="Search..." class="w-full p-2 rounded-full bg-gray-200 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+          <!-- Navigation Links -->
+          <ul id="nav-links" class="hidden md:flex space-x-6">
+              <li><a href="#" class="hover:text-gray-300 transition">Home</a></li>
+              <li><a href="friends.html" class="hover:text-gray-300 transition">Friends</a></li>
+              <li><a href="message.html" class="hover:text-gray-300 transition">Messages</a></li>
+              <li><a href="#" class="hover:text-gray-300 transition">Notifications</a></li>
+              <li><a href="#" class="hover:text-gray-300 transition">Profile</a></li>
+              <li><a href="login.html" class="hover:text-gray-300 transition">login</a></li>
+          
+          </ul>
+          </ul>
+          <!-- Hamburger Menu for Mobile -->
+          <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full bg-blue-700 text-white p-4 shadow-lg hidden">
+          <ul class="flex flex-col space-y-4">
+              <li><a href="#" class="hover:text-gray-300 transition">Home</a></li>
+              <li><a href="friends.html" class="hover:text-gray-300 transition">Friends</a></li>
+              <li><a href="message.html" class="hover:text-gray-300 transition">Messages</a></li>
+              <li><a href="#" class="hover:text-gray-300 transition">Notifications</a></li>
+              <li><a href="#" class="hover:text-gray-300 transition">Profile</a></li>
+              <li><a href="login.html" class="hover:text-gray-300 transition">login</a></li>
+          </ul>
+      </div>
+  </nav>
+  
+  
+<body class="bg-gray-100 text-gray-800 flex justify-center items-center min-h-screen">
+    
+
+    <!-- Chat Container -->
+    <div class="w-full max-w-lg bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4 border-b border-gray-200 bg-blue-600 text-white">
+            <h2 class="text-lg font-semibold">Chat</h2>
+        </div>
+        <div id="chat-area" class="p-4 h-64 overflow-y-scroll bg-gray-100">
+            <!-- Messages will be appended here -->
+        </div>
+        <div class="p-4 border-t border-gray-200 bg-white flex">
+            <input id="message-input" type="text" placeholder="Type a message..." class="w-full p-2 border rounded-lg bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button id="send-button" class="ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Get references to DOM elements
+        const chatArea = document.getElementById('chat-area');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+
+        // Function to add a message to the chat area
+        function addMessage(content, isSent = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('chat-message', isSent ? 'sent' : 'received');
+            messageDiv.innerHTML = `<div class="p-2 bg-gray-200 rounded-lg">${content}</div>`;
+            chatArea.appendChild(messageDiv);
+            chatArea.scrollTop = chatArea.scrollHeight; // Scroll to the bottom
+        }
+
+        // Event listener for the Send button
+        sendButton.addEventListener('click', () => {
+            const message = messageInput.value.trim();
+            if (message) {
+                addMessage(message, true); // Add sent message
+                messageInput.value = ''; // Clear input field
+            }
+        });
+
+        // Event listener for pressing Enter in the input field
+        messageInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                sendButton.click(); // Trigger the Send button click
+            }
+        });
+    </script>
+
+</body>
+</html>

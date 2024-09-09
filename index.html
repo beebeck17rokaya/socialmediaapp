@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles */
+        .card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navbar -->
+<nav class="bg-blue-700 text-white p-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <div class="text-2xl font-bold flex items-center">
+            <svg class="w-8 h-8 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M22 0h-20c-1.104 0-2 .896-2 2v20c0 1.104.896 2 2 2h10v-9h-3v-3h3v-2.204c0-2.946 1.794-4.796 4.636-4.796 1.316 0 2.707.236 2.707.236v3h-1.525c-1.501 0-1.931.929-1.931 1.88v1.884h3.5l-.464 3h-3.036v9h5.964c1.104 0 2-.896 2-2v-20c0-1.104-.896-2-2-2z"/></svg>
+            BOOK
+        </div>
+        <!-- Search Bar -->
+        <div class="hidden md:block w-1/2 lg:w-1/3">
+            <input type="text" placeholder="Search..." class="w-full p-2 rounded-full bg-gray-200 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <!-- Navigation Links -->
+        <ul id="nav-links" class="hidden md:flex space-x-6">
+            <li><a href="#" class="hover:text-gray-300 transition">Home</a></li>
+            <li><a href="friends.html" class="hover:text-gray-300 transition">Friends</a></li>
+            <li><a href="message.html" class="hover:text-gray-300 transition">Messages</a></li>
+            <li><a href="#" class="hover:text-gray-300 transition">Notifications</a></li>
+            <li><a href="#" class="hover:text-gray-300 transition">Profile</a></li>
+            <li><a href="login.html" class="hover:text-gray-300 transition">login</a></li>
+        
+        </ul>
+        </ul>
+        <!-- Hamburger Menu for Mobile -->
+        <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full bg-blue-700 text-white p-4 shadow-lg hidden">
+        <ul class="flex flex-col space-y-4">
+            <li><a href="#" class="hover:text-gray-300 transition">Home</a></li>
+            <li><a href="friends.html" class="hover:text-gray-300 transition">Friends</a></li>
+            <li><a href="message.html" class="hover:text-gray-300 transition">Messages</a></li>
+            <li><a href="#" class="hover:text-gray-300 transition">Notifications</a></li>
+            <li><a href="#" class="hover:text-gray-300 transition">Profile</a></li>
+            <li><a href="login.html" class="hover:text-gray-300 transition">login</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
+<!-- Home Page -->
+<div class="container mx-auto p-6 flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
+    <!-- Left Sidebar -->
+    <div class="w-full md:w-1/4 p-6 bg-white rounded-lg shadow-lg">
+        <h3 class="font-bold text-lg mb-4 hidden md:block">Your Shortcuts</h3>
+        <ul class="space-y-2">
+            <li><a href="#" class="text-blue-600 hover:underline transition">Friends</a></li>
+            <li><a href="#" class="text-blue-600 hover:underline transition">Groups</a></li>
+            <li><a href="#" class="text-blue-600 hover:underline transition">Marketplace</a></li>
+            <li><a href="#" class="text-blue-600 hover:underline transition">Watch</a></li>
+            <li><a href="#" class="text-blue-600 hover:underline transition">Saved</a></li>
+            <li><a href="#" class="text-blue-600 hover:underline transition">Videos</a></li>
+            <li><a href="#" class="text-blue-600 hover:underline transition">Reels</a></li>
+            <li><a href="#" class="text-blue-600 hover:underline transition">Recent add activity</a></li>
+            <li><a href="#" class="text-blue-600 hover:underline transition">Play games</a></li>
+            <li><a href="#" class="text-blue-600 hover:underline transition">Pages</a></li>
+        </ul>
+    </div>
+
+    <!-- Feed Section -->
+    <div id="feed-section" class="w-full md:w-2/4 p-6 bg-white rounded-lg shadow-lg">
+        <!-- Create Post -->
+        <div class="post p-4 border-b border-gray-200 mb-6 bg-gray-50 rounded-lg card">
+            <div class="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-4">
+                <img src="images/bib.jpg" alt="User" class="rounded-full w-12 h-12">
+                <div class="w-full flex flex-col space-y-4">
+                    <input id="post-input" type="text" placeholder="What's on your mind?" class="w-full p-2 border rounded-full bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input id="post-image" type="file" accept="image/*" class="w-full p-2 border rounded-full bg-white text-gray-800">
+                </div>
+            </div>
+            <button id="post-button" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">Post</button>
+        </div>
+        <!-- Posts will be appended here -->
+        <div id="posts-container">
+
+            <!-- New posts will be added here -->
+        </div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="w-full md:w-1/4 p-6 bg-gray-200 rounded-lg shadow-lg">
+        <h3 class="font-bold text-lg mb-4 hidden md:block">Trending Topics</h3>
+        <ul class="space-y-2">
+            <li><a href="https://www.tripadvisor.com/Trips" class="text-blue-600 hover:underline transition">#Travel</a></li>
+            <li><a href="https://dribbble.com/tags/photographer-website" class="text-blue-600 hover:underline transition">#Photography</a></li>
+            <li><a href="https://www.tripadvisor.com/Trips" class="text-blue-600 hover:underline transition">#Music</a></li>
+            <li><a href="https://dribbble.com/tags/photographer-website" class="text-blue-600 hover:underline transition">#Holidays and Events</a></li>
+            
+            <!-- Add more topics -->
+        </ul>
+    </div>
+</div>
+
+
+<!-- Home Page -->
+<div id="home-page" class="container mx-auto p-6">
+    <!-- Your home page content here -->
+</div>
+
+<!-- User Profile Page -->
+<div id="profile-page" class="container mx-auto p-6 hidden">
+    <!-- Cover Photo -->
+    <div class="relative bg-gray-300 h-[450px] rounded-lg overflow-hidden mb-6">
+        <img src="images/jinx.jpg" alt="Cover Photo" class="w-full h-full object-cover">
+        <img src="images/bib.jpg" alt="Profile Picture" class="absolute bottom-0 left-6 -mb-13 rounded-full w-24 h-24 md:w-32 md:h-32 border-4 border-white shadow-lg">
+    </div>
+
+    <!-- Profile Info -->
+    <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
+        <h2 class="text-2xl font-bold text-gray-800">Bibek Rokaya</h2>
+        <p class="text-gray-600 mt-2">Passionate traveler and photographer.</p>
+        <div class="flex space-x-6 mt-4">
+            <span class="text-gray-700">Followers: <strong>1.2k</strong></span>
+            <span class="text-gray-700">Following: <strong>500</strong></span>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">Follow</button>
+        </div>
+    </div>
+
+    <!-- Profile Posts -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+        <div class="bg-white p-4 rounded-lg shadow-lg card">
+            <img src="images/hiking.jpg" alt="Post 1" class="w-full h-auto object-cover rounded mb-4">
+            <p class="text-gray-700">Exploring the mountains!</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-lg card">
+            <img src="images/hiking.jpg" alt="Post 1" class="w-full h-auto object-cover rounded mb-4">
+            <p class="text-gray-700">New photography tips.</p>
+        </div>
+        <!-- Add more posts -->
+        <div class="bg-white p-4 rounded-lg shadow-lg card">
+            <img src="images/hiking.jpg" alt="Post 1" class="w-full h-auto object-cover rounded mb-4">
+            <p class="text-gray-700">New photography tips.</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-lg card">
+            <img src="images/hiking.jpg" alt="Post 1" class="w-full h-auto object-cover rounded mb-4">
+            <p class="text-gray-700">New photography tips.</p>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

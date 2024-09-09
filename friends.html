@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navbar -->
+  <nav class="bg-blue-700 text-white p-4 shadow-lg">
+      <div class="container mx-auto flex justify-between items-center">
+          <!-- Logo -->
+          <div class="text-2xl font-bold flex items-center">
+              <svg class="w-8 h-8 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M22 0h-20c-1.104 0-2 .896-2 2v20c0 1.104.896 2 2 2h10v-9h-3v-3h3v-2.204c0-2.946 1.794-4.796 4.636-4.796 1.316 0 2.707.236 2.707.236v3h-1.525c-1.501 0-1.931.929-1.931 1.88v1.884h3.5l-.464 3h-3.036v9h5.964c1.104 0 2-.896 2-2v-20c0-1.104-.896-2-2-2z"/></svg>
+              BOOK
+          </div>
+          <!-- Search Bar -->
+          <div class="hidden md:block w-1/2 lg:w-1/3">
+              <input type="text" placeholder="Search..." class="w-full p-2 rounded-full bg-gray-200 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+          <!-- Navigation Links -->
+          <ul id="nav-links" class="hidden md:flex space-x-6">
+              <li><a href="#" class="hover:text-gray-300 transition">Home</a></li>
+              <li><a href="friends.html" class="hover:text-gray-300 transition">Friends</a></li>
+              <li><a href="message.html" class="hover:text-gray-300 transition">Messages</a></li>
+              <li><a href="#" class="hover:text-gray-300 transition">Notifications</a></li>
+              <li><a href="#" class="hover:text-gray-300 transition">Profile</a></li>
+              <li><a href="login.html" class="hover:text-gray-300 transition">login</a></li>
+          
+          </ul>
+          </ul>
+          <!-- Hamburger Menu for Mobile -->
+          <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full bg-blue-700 text-white p-4 shadow-lg hidden">
+          <ul class="flex flex-col space-y-4">
+              <li><a href="#" class="hover:text-gray-300 transition">Home</a></li>
+              <li><a href="friends.html" class="hover:text-gray-300 transition">Friends</a></li>
+              <li><a href="message.html" class="hover:text-gray-300 transition">Messages</a></li>
+              <li><a href="#" class="hover:text-gray-300 transition">Notifications</a></li>
+              <li><a href="#" class="hover:text-gray-300 transition">Profile</a></li>
+              <li><a href="login.html" class="hover:text-gray-300 transition">login</a></li>
+          </ul>
+      </div>
+  </nav>
+  
+      <!-- Friends List Container -->
+    <div class="container mx-auto p-6">
+        <h1 class="text-2xl font-bold mb-6">Friends</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Friend Card -->
+            <div class="bg-white rounded-lg shadow-lg p-4 flex items-center space-x-4">
+                <img src="images/roman.jpg" alt="Friend 1" class="w-16 h-16 rounded-full object-cover">
+                <div class="flex-1">
+                    <h2 class="text-lg font-semibold text-gray-800">Roman Shah</h2>
+                    <p class="text-gray-600">Mutual Friends: 5</p>
+                    <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Message</button>
+                </div>
+            </div>
+            <!-- Repeat Friend Card for other friends -->
+            <div class="bg-white rounded-lg shadow-lg p-4 flex items-center space-x-4">
+                <img src="images/krishna.jpg" alt="Friend 2" class="w-16 h-16 rounded-full object-cover">
+                <div class="flex-1">
+                    <h2 class="text-lg font-semibold text-gray-800">Krishna Pnathi</h2>
+                    <p class="text-gray-600">Mutual Friends: 3</p>
+                    <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Message</button>
+                </div>
+            </div>
+
+
+
+            <!-- Add more friend cards as needed -->
+
+            <div class="bg-white rounded-lg shadow-lg p-4 flex items-center space-x-4">
+                <img src="images/pratik.jpg" alt="Friend 2" class="w-16 h-16 rounded-full object-cover">
+                <div class="flex-1">
+                    <h2 class="text-lg font-semibold text-gray-800">Pratik Devkota</h2>
+                    <p class="text-gray-600">Mutual Friends: 55</p>
+                    <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Message</button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-4 flex items-center space-x-4">
+                <img src="images/nirmal.jpg" alt="Friend 2" class="w-16 h-16 rounded-full object-cover">
+                <div class="flex-1">
+                    <h2 class="text-lg font-semibold text-gray-800">Nirmal Kharal</h2>
+                    <p class="text-gray-600">Mutual Friends: 33</p>
+                    <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Message</button>
+                </div>
+            </div>
+
+
+            <div class="bg-white rounded-lg shadow-lg p-4 flex items-center space-x-4">
+                <img src="images/nabin.jpg" alt="Friend 2" class="w-16 h-16 rounded-full object-cover">
+                <div class="flex-1">
+                    <h2 class="text-lg font-semibold text-gray-800">Nabin Gotami</h2>
+                    <p class="text-gray-600">Mutual Friends: 45</p>
+                    <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Message</button>
+                </div>
+            </div>
+
+
+            <div class="bg-white rounded-lg shadow-lg p-4 flex items-center space-x-4">
+                <img src="images/bib.jpg" alt="Friend 2" class="w-16 h-16 rounded-full object-cover">
+                <div class="flex-1">
+                    <h2 class="text-lg font-semibold text-gray-800">Beebeck Rokaya</h2>
+                    <p class="text-gray-600">Mutual Friends: 99</p>
+                    <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Message</button>
+                </div>
+            </div>
+
+
+            <div class="bg-white rounded-lg shadow-lg p-4 flex items-center space-x-4">
+                <img src="images/beegyan.jpg" alt="Friend 2" class="w-16 h-16 rounded-full object-cover">
+                <div class="flex-1">
+                    <h2 class="text-lg font-semibold text-gray-800">Beegyan Sharma</h2>
+                    <p class="text-gray-600">Mutual Friends: 17</p>
+                    <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Message</button>
+                </div>
+            </div>
+
+
+            <div class="bg-white rounded-lg shadow-lg p-4 flex items-center space-x-4">
+                <img src="images/sarjan.jpg" alt="Friend 2" class="w-16 h-16 rounded-full object-cover">
+                <div class="flex-1">
+                    <h2 class="text-lg font-semibold text-gray-800">Sarjan Rana</h2>
+                    <p class="text-gray-600">Mutual Friends: 18</p>
+                    <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Message</button>
+                </div>
+            </div>
+
+
+            <div class="bg-white rounded-lg shadow-lg p-4 flex items-center space-x-4">
+                <img src="images/ramesh.jpg" alt="Friend 2" class="w-16 h-16 rounded-full object-cover">
+                <div class="flex-1">
+                    <h2 class="text-lg font-semibold text-gray-800">Ramesh Budha</h2>
+                    <p class="text-gray-600">Mutual Friends: 90</p>
+                    <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Message</button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-4 flex items-center space-x-4">
+                <img src="images/shishir.jpg" alt="Friend 2" class="w-16 h-16 rounded-full object-cover">
+                <div class="flex-1">
+                    <h2 class="text-lg font-semibold text-gray-800">shishir yogi</h2>
+                    <p class="text-gray-600">Mutual Friends: 1</p>
+                    <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Message</button>
+                </div>
+            </div>
+
+
+            <div class="bg-white rounded-lg shadow-lg p-4 flex items-center space-x-4">
+                <img src="images/dhiru.jpg" alt="Friend 2" class="w-16 h-16 rounded-full object-cover">
+                <div class="flex-1">
+                    <h2 class="text-lg font-semibold text-gray-800">Dhiru Vaii Amabanii</h2>
+                    <p class="text-gray-600">Mutual Friends: 101</p>
+                    <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Message</button>
+                </div>
+            </div>
+
+
+            
+
+
+
+
+
+
+            
+
+            
+
+
+
+        </div>
+    </div>
+</body>
+</html>
